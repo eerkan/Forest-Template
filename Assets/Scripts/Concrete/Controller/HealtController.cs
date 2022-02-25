@@ -8,7 +8,7 @@ namespace EmreErkanGames
     {
         private INameplate _nameplate;
         private IKillable _killable;
-        private ReactiveProperty<float> _currentHealt { get; }
+        private ReactiveProperty<float> _currentHealt;
 
         public IReadOnlyReactiveProperty<float> CurrentHealt => _currentHealt.ToReactiveProperty();
 
