@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UniRx;
 using UnityEngine;
 using Zenject;
@@ -34,7 +35,7 @@ namespace EmreErkanGames
         public void SetHealtGauge(float value)
         {
             value = Mathf.Clamp01(value);
-            transform.localScale = new Vector3(3f * value, 1f, 1f);
+            transform.DOScale(new Vector3(3f * value, 1f, 1f), 0.1f);
         }
     }
 }

@@ -24,12 +24,12 @@ namespace EmreErkanGames
             _trees = _pool.Trees;
 
             Observable
-                .Interval(TimeSpan.FromMilliseconds(10))
+                .Interval(TimeSpan.FromSeconds(0.1f))
                 .Subscribe(_ =>
                 {
                     _trees
                         .ToList()
-                        .ForEach(tree => tree.Damage(5e-3f));
+                        .ForEach(tree => tree.Damage(0.05f));
                 });
         }
     }

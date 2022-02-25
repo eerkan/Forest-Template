@@ -13,7 +13,6 @@ namespace EmreErkanGames
         {
             Container
                 .BindMemoryPoolCustomInterface<Tree, Tree.Pool, ITreePool>()
-                .WithInitialSize(300)
                 .FromComponentInNewPrefab(_treePrefab)
                 .UnderTransformGroup("Trees");
 
