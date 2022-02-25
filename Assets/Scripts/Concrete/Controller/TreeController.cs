@@ -27,8 +27,9 @@ namespace EmreErkanGames
                 .Interval(TimeSpan.FromMilliseconds(10))
                 .Subscribe(_ =>
                 {
-                    foreach (var tree in _trees.ToList())
-                        tree.Damage(5e-3f);
+                    _trees
+                        .ToList()
+                        .ForEach(tree => tree.Damage(5e-3f));
                 });
         }
     }

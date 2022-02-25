@@ -10,7 +10,7 @@ namespace EmreErkanGames
         private IKillable _killable;
         private ReactiveProperty<float> _currentHealt;
 
-        public IReadOnlyReactiveProperty<float> CurrentHealt => _currentHealt.ToReactiveProperty();
+        public ReadOnlyReactiveProperty<float> CurrentHealt { get; }
 
         public HealtController(
             INameplate nameplate,
@@ -21,6 +21,8 @@ namespace EmreErkanGames
             _nameplate = nameplate;
             _currentHealt = new(startingHealt);
             _killable = killable;
+
+            CurrentHealt = _currentHealt.ToReadOnlyReactiveProperty();
 
             ObserveCurrentHealt();
         }
