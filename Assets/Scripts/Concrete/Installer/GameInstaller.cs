@@ -27,8 +27,8 @@ namespace EmreErkanGames
                 .FromInstance(_cameraInstance);
 
             Container
-                .Bind<IMathUtility>().
-                To<MathUtility>()
+                .Bind<IMathUtility>()
+                .To<MathUtility>()
                 .AsSingle();
 
             Container

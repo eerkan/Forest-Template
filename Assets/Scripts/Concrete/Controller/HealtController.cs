@@ -8,8 +8,9 @@ namespace EmreErkanGames
     {
         private INameplate _nameplate;
         private IKillable _killable;
+        private ReactiveProperty<float> _currentHealt { get; }
 
-        public ReactiveProperty<float> CurrentHealt { get; private set; }
+        public IReadOnlyReactiveProperty<float> CurrentHealt => _currentHealt.ToReactiveProperty();
 
         public HealtController(
             INameplate nameplate,
@@ -18,7 +19,7 @@ namespace EmreErkanGames
         )
         {
             _nameplate = nameplate;
-            CurrentHealt = new(startingHealt);
+            _currentHealt = new(startingHealt);
             _killable = killable;
 
             ObserveCurrentHealt();
@@ -35,12 +36,12 @@ namespace EmreErkanGames
 
         public void Heal(float amount)
         {
-            CurrentHealt.Value = Mathf.Clamp01(CurrentHealt.Value + amount);
+            _currentHealt.Value = Mathf.Clamp01(CurrentHealt.Value + amount);
         }
 
         public void Damage(float amount)
         {
-            CurrentHealt.Value = Mathf.Clamp01(CurrentHealt.Value - amount);
+            _currentHealt.Value = Mathf.Clamp01(CurrentHealt.Value - amount);
         }
 
         private void UpdateNameplate()

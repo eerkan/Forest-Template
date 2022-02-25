@@ -4,6 +4,6 @@ namespace EmreErkanGames
 {
     public interface IHealtController : IHealtable
     {
-        public ReactiveProperty<float> CurrentHealt { get; }
+        public IReadOnlyReactiveProperty<float> CurrentHealt { get; }
     }
 }

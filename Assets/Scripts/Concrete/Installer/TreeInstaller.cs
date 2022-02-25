@@ -23,10 +23,10 @@ namespace EmreErkanGames
                 .AsSingle();
 
             Container
-                .Bind<IKillable>().
-                To<Tree>().
-                FromComponentOnRoot().
-                AsSingle();
+                .Bind<IKillable>()
+                .To<Tree>()
+                .FromComponentOnRoot()
+                .AsSingle();
 
             Container
                 .Bind<Renderer>()
