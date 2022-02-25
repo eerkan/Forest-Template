@@ -37,7 +37,6 @@ namespace EmreErkanGames
                 )
                 .Subscribe(textureOffset =>
                     {
-
                         materialPropertyBlock.SetVector("_MainTex_ST", new Vector4(1f, 1f, textureOffset.x, textureOffset.y));
                         _renderer.SetPropertyBlock(materialPropertyBlock);
                     }
